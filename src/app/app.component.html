@@ -1,0 +1,37 @@
+
+<md-grid-list cols="4" rowHeight="100px">
+  <md-grid-tile
+      *ngFor="let tile of tiles"
+      [colspan]="tile.cols"
+      [rowspan]="tile.rows"
+      [style.background]="tile.color">
+
+    <div *ngIf="tile.text === 'Three' ">
+
+        <md-input-container class="example-full-width">
+         <input mdInput #email placeholder="Nom d'utilisateur">
+        </md-input-container>
+        <md-input-container class="example-full-width">
+      <input mdInput #motPasse placeholder="Mot de passe" type="password">
+    </md-input-container>
+    <a md-mini-fab routerLink="." (click)="test(email, password)"><md-icon>check</md-icon></a>
+    </div>
+  </md-grid-tile>
+</md-grid-list>
+
+             <hr>
+
+      <membre-form-template2></membre-form-template2>
+             <hr>
+             <membre-form-reactive3></membre-form-reactive3>
+
+
+<!--<div class="row columns">
+  <button (click)="login()" *ngIf="!(user | async)?.uid">Anonymous Login</button>
+  <button (click)="logout()" *ngIf="(user | async)?.uid">Logout</button>
+
+  <input type="text" id="message" *ngIf="(user | async)?.uid" placeholder="What is it that you do?" (keyup.enter)="Send($event.target.value)" [(ngModel)]="msgVal" />
+  <div id="details-container">
+      <p *ngFor="let item of items | async"><img src="../assets/images/pin.svg">{{item.message}}</p>
+  </div>
+</div>-->

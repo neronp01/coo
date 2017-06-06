@@ -1,0 +1,113 @@
+<div class="container">
+  <div [hidden]="submitted">
+    <h1>Membre</h1>
+    <form #membreForm="ngForm"  *ngIf="active"  (ngSubmit)="onSubmit()">
+      <div class="form-group">
+
+<md-input-container class="example-full-width">
+        <input mdInput type="text" id="name" class="form-control"
+               required minlength="4" maxlength="24" forbiddenName="bob"
+               name="name" [ngModel]  placeholder="Nom">
+
+        <div *ngIf="formErrors.name" class="alert alert-danger">
+          {{ formErrors.name }}
+        </div>
+          </md-input-container>
+    <br>
+    <md-input-container class="example-full-width">
+      <input mdInput type="text" id="prenom" class="form-control"
+               required minlength="4" maxlength="24" forbiddenName="bob"
+               name="prenom" [ngModel]  placeholder="prenom">
+
+        <div *ngIf="formErrors.prenom" class="alert alert-danger">
+          {{ formErrors.prenom }}
+        </div>
+ </md-input-container>
+
+  <br>
+    <md-input-container class="example-full-width">
+      <input mdInput type="text" id="adresse" class="form-control"
+               required minlength="4" maxlength="24" forbiddenName="bob"
+               name="adresse" [ngModel]  placeholder="adresse">
+        <div *ngIf="formErrors.adresse" class="alert alert-danger">
+          {{ formErrors.adresse }}
+        </div>
+ </md-input-container>
+
+
+<br>
+    <md-input-container class="example-full-width">
+      <input mdInput type="text" id="ville" class="form-control"
+               required minlength="4" maxlength="24" forbiddenName="bob"
+               name="ville" [ngModel]  placeholder="ville">
+        <div *ngIf="formErrors.ville" class="alert alert-danger">
+          {{ formErrors.ville }}
+        </div>
+ </md-input-container>
+
+
+<br>
+    <md-input-container class="example-full-width">
+      <input mdInput type="text" id="province" class="form-control"
+               required minlength="4" maxlength="24" forbiddenName="bob"
+               name="province" [ngModel]  placeholder="province">
+
+        <div *ngIf="formErrors.province" class="alert alert-danger">
+          {{ formErrors.province }}
+        </div>
+ </md-input-container>
+
+ <br>
+    <md-input-container class="example-full-width">
+      <input mdInput type="text" id="codePostal" class="form-control"
+               required minlength="4" maxlength="24" forbiddenName="bob"
+               name="codePostal" [ngModel]  placeholder="Code postal">
+        <div *ngIf="formErrors.codePostal" class="alert alert-danger">
+          {{ formErrors.codePostal }}
+        </div>
+ </md-input-container>
+
+
+ <br>
+    <md-input-container class="example-full-width">
+      <input mdInput type="text" id="profession"
+               name="profession" [ngModel]  placeholder="Profession">
+ </md-input-container>
+
+ <br>
+    <md-input-container class="example-full-width">
+      <input mdInput type="number" id="age"
+               name="age" [ngModel]  placeholder="Age">
+ </md-input-container>
+
+ <br>
+    <md-input-container class="example-full-width">
+      <input mdInput type="email" id="courriel " class="form-control"
+               required minlength="4" maxlength="24" forbiddenName="bob"
+               name="courriel" [ngModel]  placeholder="Courriel ">
+
+        <div *ngIf="formErrors.courriel" class="alert alert-danger">
+          {{ formErrors.courriel }}
+        </div>
+ </md-input-container>
+
+
+      </div>
+
+
+      <button type="submit" class="btn btn-default"
+             [disabled]="!membreForm.form.valid">Submit</button>
+      <button type="button" class="btn btn-default"
+             (click)="addMembre()">New membre</button>
+    </form>
+  </div>
+
+  <membre-submitted [membre]="membre" [(submitted)]="submitted"></membre-submitted>
+</div>
+
+
+<!--
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->
